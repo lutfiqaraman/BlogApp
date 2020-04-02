@@ -1,0 +1,35 @@
+.title {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0.75rem;
+}
+
+.title a {
+    color: #000;
+    text-decoration: none;
+}
+
+.navbar {
+    font-size: 1.1em;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0.5rem;
+}
+
+.navbar a {
+    color: #000000;
+}
+
+.nav-item {
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav-item:focus, .nav-item:visited, .nav-item:active {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
