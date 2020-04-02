@@ -1,0 +1,31 @@
+.card {
+    border-bottom:  1px solid rgba(0, 0, 0, 0.125);
+    margin-top: 15px;
+}
+
+.card-body {
+    display: flex;
+    padding: 15px;
+}
+
+img {
+    max-height: 200px;
+    max-width: 300px;
+    margin-right: 1rem;
+}
+
+.meta-info {
+    color: #808080;
+    margin-top: -10px;
+    font-size: 14px;
+}
+
+.continue-reading {
+    font-style: italic;
+    color: #808080;
+    text-decoration: none;
+}
+
+.continue-reading:hover {
+    text-decoration: underline;
+}

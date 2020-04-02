@@ -3,20 +3,20 @@ import { Article } from './article';
 export const ARTICLES: Article[] = [
     {
         id: 1,
-        title: 'First Article',
+        title: 'Country Article',
         content: '',
-        description: 'This is an article about the first article',
-        key: 'first-artcle',
+        description: 'An article about the country',
+        key: 'water-artcle',
         date: new Date(),
-        imageUrl: 'https://source.unsplash.com/user/erondu/daily'
+        imageUrl: 'https://source.unsplash.com/weekly?country'
     },
     {
         id: 2,
-        title: 'Second Article',
+        title: 'City Article',
         content: '',
-        description: 'This is an article about the second article',
-        key: 'second-artcle',
+        description: 'An article about the city',
+        key: 'city-artcle',
         date: new Date(),
-        imageUrl: 'https://source.unsplash.com/user/erondu/daily'
+        imageUrl: 'https://source.unsplash.com/weekly?city'
     }
 ];
