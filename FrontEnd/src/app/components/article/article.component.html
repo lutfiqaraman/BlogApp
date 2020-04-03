@@ -2,7 +2,7 @@
   <img [src]="article.imageUrl" />
   <h2 class="title">{{ article.title }}</h2>
   <div>
-    {{ article.date.toDateString() }}
+    {{ article.date | date }}
   </div>
   <p [innerHTML]="article.content"></p>
 </div>
