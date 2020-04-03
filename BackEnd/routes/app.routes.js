@@ -4,4 +4,9 @@ module.exports = app => {
     app.get("/", (req, res) => {
         res.send('articles backend server ...');
     });
+
+    //Get all articles
+    app.get("/articles", article.getAllArticles);
+
+    app.get("/articles/:key", article.getAnArticle);
 }
