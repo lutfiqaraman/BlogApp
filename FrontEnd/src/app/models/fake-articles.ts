@@ -6,7 +6,7 @@ export const ARTICLES: Article[] = [
         title: 'Country Article',
         content: '',
         description: 'An article about the country',
-        key: 'water-artcle',
+        key: 'water-article',
         date: new Date(),
         imageUrl: 'https://source.unsplash.com/weekly?country'
     },
@@ -15,7 +15,7 @@ export const ARTICLES: Article[] = [
         title: 'City Article',
         content: '',
         description: 'An article about the city',
-        key: 'city-artcle',
+        key: 'city-article',
         date: new Date(),
         imageUrl: 'https://source.unsplash.com/weekly?city'
     }
