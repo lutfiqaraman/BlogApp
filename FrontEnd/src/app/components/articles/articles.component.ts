@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/models/article';
-import { ARTICLES } from 'src/app/models/fake-articles';
 import { ArticlesService } from 'src/app/services/articles.service';
 
 @Component({
