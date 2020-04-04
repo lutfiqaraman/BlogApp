@@ -1,7 +1,7 @@
 require("dotenv").config({ path: "./config/.env" });
 const express = require("express");
 const cors = require("cors");
-const sql = require("./db/sql");
+const db = require("./db/dbConnection");
 
 const app = express();
 
@@ -17,5 +17,5 @@ require("./routes/app.routes")(app);
 
 app.listen(port, () => {
   console.log("Server is listening ...");
-  sql.init();
+  db.Article;
 });
