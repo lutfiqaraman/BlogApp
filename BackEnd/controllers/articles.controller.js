@@ -1,8 +1,9 @@
 //Controllers of articles
 const fakeArticles = require("../db/fake-articles");
+const { Article } = require("../db/dbSet");
 
 exports.getAllArticles = (req, res) => {
-  res.send(fakeArticles);
+  Article.findAll().then(articles => res.json(articles));
 };
 
 exports.getAnArticle = (req, res) => {
