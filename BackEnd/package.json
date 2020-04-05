@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev"  : "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["blog", "app", "mysql"],
+  "author": "Lutfi Qaraman",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

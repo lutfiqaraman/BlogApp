@@ -1,12 +1,14 @@
 require("dotenv").config({ path: "./config/.env" });
 const express = require("express");
 const cors = require("cors");
-const db = require("./db/dbSet");
 
 const app = express();
 
 let corsOptions = {
-  origin: ["http://localhost:4200", "http://localhost:4000"],
+  origin: [
+    "http://localhost:4200", 
+    "http://localhost:4000"
+  ],
 };
 
 app.use(cors(corsOptions));
@@ -17,5 +19,4 @@ require("./routes/app.routes")(app);
 
 app.listen(port, () => {
   console.log("Server is listening ...");
-  db.Article;
 });
