@@ -13,7 +13,7 @@ sequelize = new Sequelize(db, username, password, {
 });
 
 sequelize
-  .sync({ force: true })
+  .sync()
   .then(() => { console.log('Database & tables have been created!') });
 
 const Article = ArticleModel(sequelize, Sequelize);

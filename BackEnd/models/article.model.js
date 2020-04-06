@@ -1,34 +1,20 @@
-require("dotenv").config({ path: "./config/.env" });
-
-const tableName = 'article';
-
-module.exports = (sequalize, type) => {
-  return sequalize.define(tableName, {
-    id: {
-      type: type.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
+"use strict";
+module.exports = (sequelize, DataTypes) => {
+  const Article = sequelize.define(
+    "Article",
+    {
+      title: DataTypes.STRING,
+      author: DataTypes.STRING,
+      content: DataTypes.TEXT,
+      description: DataTypes.TEXT,
+      key: DataTypes.STRING,
+      date: DataTypes.DATE,
+      imageUrl: DataTypes.STRING,
     },
-    title: {
-      type: type.STRING,
-    },
-    author: {
-      type: type.STRING,
-    },
-    content: {
-      type: type.TEXT,
-    },
-    description: {
-      type: type.TEXT,
-    },
-    key: {
-      type: type.STRING,
-    },
-    date: {
-      type: type.DATE,
-    },
-    imageUrl: {
-      type: type.STRING,
-    },
-  });
+    {}
+  );
+  Article.associate = function (models) {
+    // associations can be defined here
+  };
+  return Article;
 };
