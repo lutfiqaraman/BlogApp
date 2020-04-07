@@ -9,7 +9,7 @@ exports.getAllArticles = async (req, res) => {
 
 //To Get a single article filtered by the article key
 exports.getAnArticle = async (req, res) => {
-  await db.Article.findOne({ where: { key: req.params.key } }).then((result) => {
-    res.json(result);
+  await db.Article.findOne({ where: { key: req.params.key } }).then((article) => {
+    res.json(article);
   });
 };
