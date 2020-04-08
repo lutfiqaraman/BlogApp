@@ -1,5 +1,4 @@
 // Controllers of articles
-const fakeArticles = require("../db/fake-articles");
 const db = require("../db/dbSet");
 
 // To Get all the articles form database
