@@ -26,7 +26,6 @@ export class ArticleComponent implements OnInit {
           return;
         }
         this.article = a;
-        console.log(this.article);
       });
     });
   }

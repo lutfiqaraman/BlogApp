@@ -2,20 +2,24 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Article } from '../models/article';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ArticlesService {
+  apiUrl: string = environment.apiUrl;
+  url: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getAllArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>('http://localhost:3000/articles');
+    this.url = this.apiUrl + '/articles';
+    return this.http.get<Article[]>(this.url);
   }
 
   getAnArticle(key: string): Observable<Article> {
-    return this.http.get<Article>('http://localhost:3000/articles/' + key);
+    this.url = this.apiUrl + '/articles/' + key;
+    return this.http.get<Article>(this.url);
   }
 }
