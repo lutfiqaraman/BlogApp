@@ -17,4 +17,9 @@ export class DashboardService {
     this.url = this.apiUrl + '/dashboard/overview';
     return this.http.get<Article[]>(this.url);
   }
+
+  getArticle(key: string): Observable<Article> {
+    this.url = this.apiUrl + '/dashboard/article/' + key;
+    return this.http.get<Article>(this.url);
+  }
 }
