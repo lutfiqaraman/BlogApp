@@ -3,6 +3,7 @@
     <div class="overview-cell"></div>
     <div class="overview-cell">Title</div>
     <div class="overview-cell">Date</div>
+    <div class="overview-cell">Action</div>
   </div>
   <div class="overview-row" *ngFor="let article of articles">
     <div class="overview-cell">
@@ -12,5 +13,8 @@
       <a routerLink="../{{ article.key }}">{{ article.title }}</a>
     </div>
     <div class="overview-cell">{{ article.date | date }}</div>
+    <div class="overview-cell">
+      <a routerLink="/dashboard/{{ article.key }}">Edit</a>
+    </div>
   </div>
 </div>

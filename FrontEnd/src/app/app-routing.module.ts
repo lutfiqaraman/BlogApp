@@ -14,6 +14,7 @@ import { EditArticleComponent } from './components/dashboard/edit-article/edit-a
 const routes: Routes = [
   { path: 'articles', component: ArticlesComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard/:key', component: EditArticleComponent },
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent },
   { path: '', component: ArticlesComponent },
