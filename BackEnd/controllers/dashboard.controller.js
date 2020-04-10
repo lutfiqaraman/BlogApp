@@ -7,7 +7,8 @@ exports.getAllArticlesOnDashBoard = async (req, res) => {
 
 // To get an article by an article's id from database
 exports.getDashBoardArticleById = async (req, res) => {
-  await db.Article.findOne({ where: { id: req.params.id } }).then((article) => {
+  const id = req.params.id;
+  await db.Article.findOne({ where: { id } }).then((article) => {
     res.json(article);
   });
 };
@@ -15,10 +16,10 @@ exports.getDashBoardArticleById = async (req, res) => {
 // To update an article by an article's id from database
 exports.UpdateArticleById = async (req, res) => {
   const id = req.params.id;
-  await db.Article.findOne({ where: { id: req.params.id } }).then((article) => {
-    article.update({
-      title: req.title
-    });
-    res.json(article);
+  await db.Article.update({
+    title: req.body.title
+  }, {
+    returning: true,
+    where: { id }
   });
 };

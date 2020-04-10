@@ -8,8 +8,8 @@ exports.getAllArticles = async (req, res) => {
 
 // To get an article by an article's id from database
 exports.getAnArticle = async (req, res) => {
-  console.log(req);
-  await db.Article.findOne({ where: { id: req.params.id } }).then((article) => {
+  const id = req.params.id;
+  await db.Article.findOne({ where: { id } }).then((article) => {
     res.json(article);
   });
 };

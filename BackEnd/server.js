@@ -12,6 +12,7 @@ let corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.json());
 
 const port = process.env.PORT;
 
