@@ -13,11 +13,13 @@ export class ArticlesService {
 
   constructor(private http: HttpClient) {}
 
+  // Get all articles
   getAllArticles(): Observable<Article[]> {
     this.url = this.apiUrl + '/articles';
     return this.http.get<Article[]>(this.url);
   }
 
+  // Get an article
   getAnArticle(id: string): Observable<Article> {
     this.url = this.apiUrl + '/articles/' + id;
     return this.http.get<Article>(this.url);
