@@ -13,13 +13,21 @@ export class DashboardService {
 
   constructor(private http: HttpClient) {}
 
+  // Get all articles
   getArticals(): Observable<Article[]> {
     this.url = this.apiUrl + '/dashboard/overview';
     return this.http.get<Article[]>(this.url);
   }
 
-  getArticle(key: string): Observable<Article> {
-    this.url = this.apiUrl + '/dashboard/article/' + key;
+  // Get an article
+  getArticle(id: string): Observable<Article> {
+    this.url = this.apiUrl + '/dashboard/article/' + id;
     return this.http.get<Article>(this.url);
+  }
+
+  // Update an article
+  updateArticle(article: Article): Observable<Article> {
+    this.url = this.apiUrl + '/dashboard/' + article.id;
+    return this.http.put<Article>(this.url, article);
   }
 }

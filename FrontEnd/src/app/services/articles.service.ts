@@ -18,8 +18,8 @@ export class ArticlesService {
     return this.http.get<Article[]>(this.url);
   }
 
-  getAnArticle(key: string): Observable<Article> {
-    this.url = this.apiUrl + '/articles/' + key;
+  getAnArticle(id: string): Observable<Article> {
+    this.url = this.apiUrl + '/articles/' + id;
     return this.http.get<Article>(this.url);
   }
 }

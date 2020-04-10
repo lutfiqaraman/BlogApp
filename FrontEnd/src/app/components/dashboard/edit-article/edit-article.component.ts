@@ -18,18 +18,24 @@ export class EditArticleComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const key: string = params.key;
-      this.getEditedArticle(key);
+      const id: string = params.id;
+      this.getEditedArticle(id);
     });
   }
 
-  getEditedArticle(key: string): void {
-    this.dashboardService.getArticle(key).subscribe((article: Article) => {
+  getEditedArticle(id: string): void {
+    this.dashboardService.getArticle(id).subscribe((article: Article) => {
       if (article === null) {
         this.router.navigateByUrl('404');
         return;
       }
       this.article = article;
+    });
+  }
+
+  updateArticle(): void {
+    this.dashboardService.updateArticle(this.article).subscribe(result => {
+      this.article = result;
     });
   }
 

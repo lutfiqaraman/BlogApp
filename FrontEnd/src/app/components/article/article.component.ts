@@ -19,8 +19,8 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      const key = params.key;
-      this.articleService.getAnArticle(key).subscribe((a) => {
+      const id = params.id;
+      this.articleService.getAnArticle(id).subscribe((a) => {
         if (a === undefined) {
           this.router.navigateByUrl('404');
           return;
