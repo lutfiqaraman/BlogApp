@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditArticleComponent implements OnInit {
   article: Article = null;
+  isSaved = false;
 
   constructor(
     private dashboardService: DashboardService,
@@ -34,6 +35,7 @@ export class EditArticleComponent implements OnInit {
   }
 
   updateArticle(): void {
+    this.isSaved = true;
     this.dashboardService.updateArticle(this.article).subscribe(result => {
       this.article = result;
     });

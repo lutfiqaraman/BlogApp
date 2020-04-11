@@ -34,4 +34,9 @@
     <button (click)="updateArticle()">Update</button>
   </div>
 
+  <div class="status" *ngIf="isSaved">
+    <span class="savedtext">article has been saved</span>
+    <a routerLink="../../{{ article.id }}" class="viewlink">View article</a>
+  </div>
+
 </div>

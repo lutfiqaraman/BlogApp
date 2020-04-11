@@ -17,7 +17,13 @@ exports.getDashBoardArticleById = async (req, res) => {
 exports.UpdateArticleById = async (req, res) => {
   const id = req.params.id;
   await db.Article.update({
-    title: req.body.title
+    title: req.body.title,
+    author: req.body.author,
+    content: req.body.content,
+    description: req.body.description,
+    key: req.body.key,
+    date: req.body.date,
+    imageUrl: req.body.imageUrl
   }, {
     returning: true,
     where: { id }
