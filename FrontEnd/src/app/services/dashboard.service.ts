@@ -20,8 +20,13 @@ export class DashboardService {
   }
 
   // Get an article
-  getArticle(id: string): Observable<Article> {
+  getAnArticle(id: string): Observable<Article> {
     this.url = this.apiUrl + '/dashboard/article/' + id;
+    return this.http.get<Article>(this.url);
+  }
+
+  previewAnArticle(id: string): Observable<Article> {
+    this.url = this.apiUrl + '/dashboard/preview/' + id;
     return this.http.get<Article>(this.url);
   }
 

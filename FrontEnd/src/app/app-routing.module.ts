@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'articles', component: ArticlesComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/:id', component: EditArticleComponent },
+  { path: 'dashboard/preview/:id', component: ArticleComponent },
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent },
   { path: '', component: ArticlesComponent },

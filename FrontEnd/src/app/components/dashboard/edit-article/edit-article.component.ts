@@ -25,7 +25,7 @@ export class EditArticleComponent implements OnInit {
   }
 
   getEditedArticle(id: string): void {
-    this.dashboardService.getArticle(id).subscribe((article: Article) => {
+    this.dashboardService.getAnArticle(id).subscribe((article: Article) => {
       if (article === null) {
         this.router.navigateByUrl('404');
         return;
@@ -39,6 +39,10 @@ export class EditArticleComponent implements OnInit {
     this.dashboardService.updateArticle(this.article).subscribe(result => {
       this.article = result;
     });
+  }
+
+  previewArticle(): void {
+    this.router.navigateByUrl('/dashboard/preview/' + this.article.id);
   }
 
 }

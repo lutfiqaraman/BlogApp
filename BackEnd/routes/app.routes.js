@@ -16,6 +16,9 @@ module.exports = app => {
     // Edit an article
     app.get("/dashboard/article/:id", dashboard.getDashBoardArticleById);
 
+    // Preview an article
+    app.get("/dashboard/preview/:id", dashboard.getDashBoardArticleById);
+
     // Update an article
     app.put("/dashboard/:id", dashboard.UpdateArticleById);
     
