@@ -36,4 +36,10 @@ export class DashboardService {
     this.url = this.apiUrl + '/dashboard/' + article.id;
     return this.http.put<Article>(this.url, article);
   }
+
+  // Delete an article
+  deleteAnArticle(id: number): Observable<any> {
+    this.url = this.apiUrl + '/dashboard/article/' + id;
+    return this.http.delete<any>(this.url);
+  }
 }

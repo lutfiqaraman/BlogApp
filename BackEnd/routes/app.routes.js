@@ -20,6 +20,9 @@ module.exports = app => {
     app.get("/dashboard/preview/:id", dashboard.getDashBoardArticleById);
 
     // Update an article
-    app.put("/dashboard/:id", dashboard.UpdateArticleById);
+    app.put("/dashboard/:id", dashboard.updateArticleById);
+
+    // Delete an article
+    app.delete("/dashboard/article/:id", dashboard.deleteArticleById);
     
 }

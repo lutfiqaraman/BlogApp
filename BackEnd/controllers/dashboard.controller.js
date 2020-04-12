@@ -14,18 +14,34 @@ exports.getDashBoardArticleById = async (req, res) => {
 };
 
 // To update an article by an article's id from database
-exports.UpdateArticleById = async (req, res) => {
+exports.updateArticleById = async (req, res) => {
   const id = req.params.id;
-  await db.Article.update({
-    title: req.body.title,
-    author: req.body.author,
-    content: req.body.content,
-    description: req.body.description,
-    key: req.body.key,
-    date: req.body.date,
-    imageUrl: req.body.imageUrl
-  }, {
-    returning: true,
-    where: { id }
-  });
+  await db.Article.update(
+    {
+      title: req.body.title,
+      author: req.body.author,
+      content: req.body.content,
+      description: req.body.description,
+      key: req.body.key,
+      date: req.body.date,
+      imageUrl: req.body.imageUrl,
+    },
+    {
+      returning: true,
+      where: { id },
+    }
+  );
+};
+
+// To delete an article by an article's id from database
+exports.deleteArticleById = async (req, res) => {
+  const id = req.params.id;
+  if (db.Article != null) {
+    await db.Article.destroy({
+      where: { id },
+      force: true,
+    });
+  } else {
+    res.status(400).send({ message: "Article could not be deleted"});
+  }
 };
