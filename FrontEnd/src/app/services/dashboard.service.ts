@@ -31,7 +31,7 @@ export class DashboardService {
   }
 
   // Update an article
-  updateArticle(article: Article): Observable<Article> {
+  updateAnArticle(article: Article): Observable<Article> {
     this.url = this.apiUrl + '/dashboard/' + article.id;
     return this.http.put<Article>(this.url, article);
   }

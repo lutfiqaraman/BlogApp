@@ -36,7 +36,7 @@ export class EditArticleComponent implements OnInit {
 
   updateArticle(): void {
     this.isSaved = true;
-    this.dashboardService.updateArticle(this.article).subscribe(result => {
+    this.dashboardService.updateAnArticle(this.article).subscribe(result => {
       this.article = result;
     });
   }
