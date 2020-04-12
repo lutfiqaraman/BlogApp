@@ -31,9 +31,10 @@
   </div>
 
   <div>
-    <button (click)="previewArticle()">Preview</button>
-    <button (click)="updateArticle()">Update</button>
-    <button (click)="deleteArticle()">Delete</button>
+    <button (click)="createArticle()" *ngIf="isNew">Save</button>
+    <button (click)="previewArticle()" *ngIf="!isNew">Preview</button>
+    <button (click)="updateArticle()" *ngIf="!isNew">Update</button>
+    <button (click)="deleteArticle()" *ngIf="!isNew">Delete</button>
   </div>
 
   <div class="status" *ngIf="isSaved">

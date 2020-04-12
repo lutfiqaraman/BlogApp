@@ -24,5 +24,8 @@ module.exports = app => {
 
     // Delete an article
     app.delete("/dashboard/article/:id", dashboard.deleteArticleById);
+
+    // Create an article
+    app.post("/dashboard/article", dashboard.createAnArticle);
     
 }

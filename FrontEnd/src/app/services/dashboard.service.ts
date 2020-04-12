@@ -13,6 +13,12 @@ export class DashboardService {
 
   constructor(private http: HttpClient) {}
 
+  // Create an article
+  createAnArticle(article: Article): Observable<Article> {
+    this.url = environment.apiUrl + '/dashboard/article';
+    return this.http.post<Article>(this.url, article);
+  }
+
   // Get all articles
   getArticals(): Observable<Article[]> {
     this.url = this.apiUrl + '/dashboard/overview';

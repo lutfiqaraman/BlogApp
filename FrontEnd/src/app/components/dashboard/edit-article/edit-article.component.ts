@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class EditArticleComponent implements OnInit {
   article: Article = null;
   isSaved = false;
+  isNew = false;
 
   constructor(
     private dashboardService: DashboardService,
@@ -21,7 +22,22 @@ export class EditArticleComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       const id: string = params.id;
-      this.getEditedArticle(id);
+
+      if (id !== 'create') {
+        this.getEditedArticle(id);
+      } else {
+        this.article = new Article();
+        this.isNew = true;
+      }
+    });
+  }
+
+  createArticle(): void {
+    this.isSaved = false;
+    this.dashboardService.createAnArticle(this.article).subscribe(result => {
+      this.article = result;
+      this.isSaved = true;
+      this.isNew = false;
     });
   }
 
