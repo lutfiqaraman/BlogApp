@@ -25,6 +25,7 @@ export class DashboardService {
     return this.http.get<Article>(this.url);
   }
 
+  // Preview an article form dashboard
   previewAnArticle(id: string): Observable<Article> {
     this.url = this.apiUrl + '/dashboard/preview/' + id;
     return this.http.get<Article>(this.url);
