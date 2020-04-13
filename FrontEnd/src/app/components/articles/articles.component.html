@@ -1,8 +1,8 @@
 <div *ngFor="let article of articles">
     <div class="card">
         <div class="card-body">
-            <div>
-                <img [src]='article.imageUrl' alt="image_article" class="showImage">
+            <div class="articleimage">
+                <img [src]='article.imageUrl' alt="image_article">
             </div>
             <div>
                 <h3>{{ article.title }}</h3>

@@ -8,13 +8,6 @@
     padding: 15px;
 }
 
-.showImage {
-  max-height: 250px;
-  max-width: 200px;
-  margin: 1rem;
-  padding: 1rem;
-}
-
 .meta-info {
     color: #808080;
     margin-top: -10px;
@@ -29,4 +22,18 @@
 
 .continue-reading:hover {
     text-decoration: underline;
+}
+
+.articleimage {
+  width: 300px;
+  height: 200px;
+  margin-right: 1rem;
+  padding-right: 0.5rem;
+}
+
+img {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
 }
