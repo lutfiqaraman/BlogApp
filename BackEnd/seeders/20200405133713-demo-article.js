@@ -6,7 +6,6 @@ module.exports = {
       "articles",
       [
         {
-          id: 1,
           title: "Seed Article",
           author: "John Doe",
           content:
