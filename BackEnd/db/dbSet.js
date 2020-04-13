@@ -1,5 +1,8 @@
 require("dotenv").config({ path: "./config/.env" });
+
+// Data Models
 const ArticleModel = require('../models/article.model');
+const UserModel = require('../models/user.model');
 
 const Sequelize = require("sequelize");
 const db = process.env.DATABASE;
@@ -17,4 +20,6 @@ sequelize
   .then(() => { console.log('Database & tables have been created!') });
 
 const Article = ArticleModel(sequelize, Sequelize);
-module.exports = { Article };
+const User = UserModel(sequelize, Sequelize);
+
+module.exports = { User, Article };
