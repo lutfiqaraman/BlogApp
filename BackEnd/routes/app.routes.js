@@ -1,31 +1,36 @@
 module.exports = app => {
-    const article   = require('../controllers/articles.controller');
-    const dashboard = require('../controllers/dashboard.controller');
+  const user = require('../controllers/users.controller');
+  const article = require('../controllers/articles.controller');
+  const dashboard = require('../controllers/dashboard.controller');
 
-    app.get("/", (req, res) => {
-        res.send('articles backend server ...');
-    });
+  app.get("/", (req, res) => {
+    res.send('articles backend server ...');
+  });
 
-    // Get all articles
-    app.get("/articles", article.getAllArticles);
-    app.get("/articles/:id", article.getAnArticle);
+  // Users - register a user
+  app.post("/user/register", user.registerUser);
 
-    // Get all articles in Dashboard
-    app.get("/dashboard/overview", dashboard.getAllArticlesOnDashBoard);
+  // Articles - Get all articles
+  app.get("/articles", article.getAllArticles);
 
-    // Edit an article
-    app.get("/dashboard/article/:id", dashboard.getDashBoardArticleById);
+  // Articles - Get an articl
+  app.get("/articles/:id", article.getAnArticle);
 
-    // Preview an article
-    app.get("/dashboard/preview/:id", dashboard.getDashBoardArticleById);
+  // Dashboard - Get all articles in Dashboard
+  app.get("/dashboard/overview", dashboard.getAllArticlesOnDashBoard);
 
-    // Update an article
-    app.put("/dashboard/:id", dashboard.updateArticleById);
+  // Dashboard - Edit an article
+  app.get("/dashboard/article/:id", dashboard.getDashBoardArticleById);
 
-    // Delete an article
-    app.delete("/dashboard/article/:id", dashboard.deleteArticleById);
+  // Dashboard - Preview an article
+  app.get("/dashboard/preview/:id", dashboard.getDashBoardArticleById);
 
-    // Create an article
-    app.post("/dashboard/article", dashboard.createAnArticle);
-    
+  // Dashboard - Update an article
+  app.put("/dashboard/:id", dashboard.updateArticleById);
+
+  // Dashboard - Delete an article
+  app.delete("/dashboard/article/:id", dashboard.deleteArticleById);
+
+  // Dashboard - Create an article
+  app.post("/dashboard/article", dashboard.createAnArticle);  
 }
