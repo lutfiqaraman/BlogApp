@@ -1,5 +1,7 @@
 <div class="article">
-  <img [src]="article.imageUrl" />
+  <div class="mainimage">
+    <img [src]="article.imageUrl" />
+  </div>
   <h2 class="title">{{ article.title }}</h2>
   <div>
     {{ article.date | date }}
