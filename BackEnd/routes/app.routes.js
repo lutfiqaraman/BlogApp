@@ -10,6 +10,9 @@ module.exports = app => {
   // Users - register a user
   app.post("/user/register", user.registerUser);
 
+  // Users - login
+  app.post("/user/login", user.loginUser);
+
   // Articles - Get all articles
   app.get("/articles", article.getAllArticles);
 
