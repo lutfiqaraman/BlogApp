@@ -1,7 +1,7 @@
 const db = require("../db/dbSet");
 const crypto = require("crypto");
 
-// Register a user and save it in database
+// Create a user
 exports.registerUser = async (req, res) => {
   const name = req.body.name.toLowerCase();
   const salt = crypto.randomBytes(16).toString("hex");
@@ -15,7 +15,7 @@ exports.registerUser = async (req, res) => {
     name,
     password: hashedPassword,
     salt,
-  }).then((result) => res.json(result));
+  }).then((result) => res.status(201).send(result));
 };
 
 // User Login
@@ -31,19 +31,19 @@ exports.loginUser = async (req, res) => {
         const enteredPassword = crypto
           .pbkdf2Sync(password, user.salt, 1000, 64, "sha512")
           .toString("hex");
-        
+
         if (enteredPassword === user.password) {
           res.status(200).json("login successfully");
         } else {
           res.status(200).json("name or password is wrong");
         }
       } else {
-        res.status(200).send('unknown name');
+        res.status(200).send("unknown name");
       }
     })
     .catch((err) => {
       if (err) {
-        throw new Error('something bad happened');
+        throw new Error("something bad happened");
       }
     });
 };
