@@ -1,5 +1,6 @@
 const db = require("../db/dbSet");
 const crypto = require("crypto");
+const tokengenerator = require("../auth/tokengenerator");
 
 // Create a user
 exports.registerUser = async (req, res) => {
@@ -33,7 +34,8 @@ exports.loginUser = async (req, res) => {
           .toString("hex");
 
         if (enteredPassword === user.password) {
-          res.status(200).json("login successfully");
+          const token = tokengenerator.jwtToken(name);
+          res.status(200).send(token);
         } else {
           res.status(200).json("name or password is wrong");
         }
@@ -43,7 +45,7 @@ exports.loginUser = async (req, res) => {
     })
     .catch((err) => {
       if (err) {
-        throw new Error("something bad happened");
+        throw err;
       }
     });
 };
