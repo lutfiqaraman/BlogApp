@@ -5,7 +5,7 @@ const auth = async (req, res, next) => {
   const verified = tokenManagement.verifyToken(token);
 
   console.log(token);
-  if (!verified || (token == null)) {
+  if (!verified) {
     return res.status(401).send("User is not authenticated");
   } 
 
