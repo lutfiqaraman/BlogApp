@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const keys = require("./keys");
 
+// Sign Token
 exports.signToken = (name) => {
   const payload = { name };
 
@@ -19,6 +20,7 @@ exports.signToken = (name) => {
   return token;
 };
 
+// Verify Token
 exports.verifyToken = (token) => {
   const publicKey = keys.keyGenerator.publicKey;
 

@@ -1,6 +1,6 @@
 const db = require("../db/dbSet");
 const crypto = require("crypto");
-const tokenManagement = require("../auth/tokenmanagement");
+const tokenManagement = require("../authorization/tokenmanagement");
 
 // Create a user
 exports.registerUser = async (req, res) => {
