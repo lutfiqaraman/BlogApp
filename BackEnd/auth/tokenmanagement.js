@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const keys = require("./keys");
 
-exports.jwtToken = (name) => {
+exports.signToken = (name) => {
   const payload = { name };
 
   const privateKey = {
@@ -18,3 +18,14 @@ exports.jwtToken = (name) => {
 
   return token;
 };
+
+exports.verifyToken = (token) => {
+  const publicKey = keys.keyGenerator.publicKey;
+
+  const verifyOptions = {
+    expiresIn: "12h",
+    algorithm: "RS256",
+  };
+
+  return jwt.verify(token, publicKey, verifyOptions);
+}

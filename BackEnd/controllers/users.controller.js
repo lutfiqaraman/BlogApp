@@ -1,6 +1,6 @@
 const db = require("../db/dbSet");
 const crypto = require("crypto");
-const tokengenerator = require("../auth/tokengenerator");
+const tokenManagement = require("../auth/tokenmanagement");
 
 // Create a user
 exports.registerUser = async (req, res) => {
@@ -34,7 +34,7 @@ exports.loginUser = async (req, res) => {
           .toString("hex");
 
         if (enteredPassword === user.password) {
-          const token = tokengenerator.jwtToken(name);
+          const token = tokenManagement.signToken(name);
           res.status(200).send(token);
         } else {
           res.status(200).json("name or password is wrong");
