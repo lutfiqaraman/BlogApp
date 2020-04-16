@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
+    this.errMsg = '';
     this.authService.login(this.user.name, this.user.password).subscribe(
       (result) => {
         console.log(result);

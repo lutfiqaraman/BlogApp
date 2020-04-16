@@ -1,1 +1,37 @@
-<button (click)="login()">Login</button>
+<h2 class="center">Login</h2>
+
+<form (ngSubmit)="login()" #loginForm="ngForm">
+  <div>
+    <input
+      type="text"
+      required
+      [(ngModel)]="user.name"
+      name="name"
+      #name="ngModel"
+      placeholder="name"
+    />
+    <div [hidden]="name.valid || name.pristine" class="invalid">
+      <p>Name is required</p>
+    </div>
+  </div>
+
+  <div>
+    <input
+      type="password"
+      required
+      [(ngModel)]="user.password"
+      name="password"
+      #password="ngModel"
+      placeholder="password"
+    />
+    <div [hidden]="password.valid || password.pristine" class="invalid">
+      <p>Password is required</p>
+    </div>
+  </div>
+
+  <button type="submit" class="button" [disabled]="!loginForm.form.valid">
+    Login
+  </button>
+</form>
+
+<span class="errMsg">{{ errMsg }}</span>

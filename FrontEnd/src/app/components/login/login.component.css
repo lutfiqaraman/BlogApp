@@ -1,0 +1,35 @@
+.center {
+  text-align: center;
+}
+
+.errMsg {
+  color: #f00;
+}
+
+.invalid {
+  color: #f00;
+  font-size: 0.9rem;
+}
+
+button {
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: #f7f8fa;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #808080;
+}
+
+input {
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 2px;
+  text-indent: 2px;
+  width: 100%;
+}
