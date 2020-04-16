@@ -49,3 +49,11 @@ exports.loginUser = async (req, res) => {
       }
     });
 };
+
+// User a user
+exports.validUser = async (req, res) => {
+  const token = req.body.token;
+  const valid = tokenManagement.verifyToken(token);
+
+  res.send(valid != false);
+};

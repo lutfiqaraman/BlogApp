@@ -15,6 +15,9 @@ module.exports = app => {
   // Users - login
   app.post("/user/login", user.loginUser);
 
+  // Userss - Valid User
+  app.post("/user/auth", user.validUser);
+
   // Articles - Get all articles
   app.get("/articles", article.getAllArticles);
 

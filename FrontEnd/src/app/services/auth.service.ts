@@ -19,4 +19,15 @@ export class AuthService {
       password,
     });
   }
+
+  authUser(): Observable<boolean> {
+    let token: string;
+    this.url = this.apiUrl + '/user/auth';
+
+    if (typeof localStorage !== 'undefined') {
+      token = localStorage.token ? localStorage.token : '';
+    }
+
+    return this.http.post<boolean>(this.url, { token });
+  }
 }

@@ -29,5 +29,9 @@ exports.verifyToken = (token) => {
     algorithm: "RS256",
   };
 
-  return jwt.verify(token, publicKey, verifyOptions);
+  try {
+    return jwt.verify(token, publicKey, verifyOptions);  
+  } catch (error) {
+    return false;
+  }
 }
