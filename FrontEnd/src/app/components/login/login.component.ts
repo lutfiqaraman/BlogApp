@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-login',
@@ -7,18 +8,20 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  user: User = new User();
+  errMsg = '';
+
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   login() {
-    this.authService.login('username', 'password').subscribe(
+    this.authService.login(this.user.name, this.user.password).subscribe(
       (result) => {
         console.log(result);
       },
       (error) => {
-        console.log(error);
-        console.log('password or username is wrong');
+        this.errMsg = 'password or username is wrong';
       }
     );
   }
