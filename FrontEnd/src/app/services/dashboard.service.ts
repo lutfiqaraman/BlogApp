@@ -13,21 +13,6 @@ export class DashboardService {
 
   constructor(private http: HttpClient) {}
 
-  // Get Token
-  getHeader(): HttpHeaders {
-    let token: string;
-
-    if (typeof localStorage !== 'undefined') {
-      token = localStorage.token;
-    }
-
-    const headers: HttpHeaders = new HttpHeaders({
-      Authorization: token
-    });
-
-    return headers;
-  }
-
   // Create an article
   createAnArticle(article: Article): Observable<Article> {
     this.url = environment.apiUrl + '/dashboard/article';
@@ -37,7 +22,7 @@ export class DashboardService {
   // Get all articles
   getArticals(): Observable<Article[]> {
     this.url = this.apiUrl + '/dashboard/overview';
-    return this.http.get<Article[]>(this.url, { headers: this.getHeader() });
+    return this.http.get<Article[]>(this.url);
   }
 
   // Get an article
