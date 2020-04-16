@@ -35,7 +35,7 @@ exports.loginUser = async (req, res) => {
 
         if (enteredPassword === user.password) {
           const token = tokenManagement.signToken(name);
-          res.status(200).send(token);
+          res.status(200).send({ token });
         } else {
           res.status(200).json("name or password is wrong");
         }
