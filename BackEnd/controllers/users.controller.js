@@ -50,7 +50,7 @@ exports.loginUser = async (req, res) => {
     });
 };
 
-// User a user
+// Validate if user does a successful login
 exports.validUser = async (req, res) => {
   const token = req.body.token;
   const valid = tokenManagement.verifyToken(token);
