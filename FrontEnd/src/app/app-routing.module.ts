@@ -10,6 +10,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ArticleOverviewComponent } from './components/dashboard/article-overview/article-overview.component';
 import { EditArticleComponent } from './components/dashboard/edit-article/edit-article.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: 'articles', component: ArticlesComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'dashboard/:id', component: EditArticleComponent },
   { path: 'dashboard/preview/:id', component: ArticleComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'login', component: LoginComponent },
   { path: '404', component: NotFoundComponent },
   { path: '', component: ArticlesComponent },
   { path: ':id', component: ArticleComponent },
@@ -31,6 +33,7 @@ export class AppRoutingModule { }
 export const routingComponent = [
   NavbarComponent,
   FooterComponent,
+  LoginComponent,
   ArticlesComponent,
   ArticleComponent,
   NotFoundComponent,
