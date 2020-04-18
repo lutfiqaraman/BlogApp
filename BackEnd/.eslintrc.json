@@ -15,10 +15,6 @@
         "ecmaVersion": 2018
     },
     "rules": {
-      "semicolon": {
-        "options": [
-          "always"
-        ]
-      }
+      "semi":"error"
     }
 }
