@@ -5,7 +5,7 @@
 
 .card-body {
     display: flex;
-    padding: 15px;
+    padding: 30px 0;
 }
 
 .meta-info {
@@ -36,4 +36,11 @@
   max-width: 100%;
   min-height: 100%;
   max-height: 100%;
+  border-radius: 5px;
+}
+
+.imageframe {
+  border: 1px solid #808080;
+  padding: 0.25rem;
+  border-radius: 5px;
 }
